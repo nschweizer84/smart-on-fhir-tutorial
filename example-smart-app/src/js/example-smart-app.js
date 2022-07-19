@@ -56,9 +56,10 @@
 		
 		allergy.forEach(element => {
 				console.log(element);
-			if (typeof element !== 'undefined'){
+			if (typeof element != 'undefined'){
 			allergytable.push("<tr><th>Allergy:</th><td>"+element.code.text+"</tr></td>");
 			}})
+		
 	
 
           var p = defaultPatient();
@@ -137,6 +138,27 @@
       return undefined;
     }
   }
+	
+function getAllergyAndReaction(ag) {
+	var all;
+	if (typeof ag != 'undefined' &&
+	    typeof ag.code != 'undefined' &&
+	    typeof ag.code.text != 'undefined){
+	    all = ag.code.text;
+	    
+	    if (typeof ag.reaction != 'undefined' &&
+	    	typeof ag.reaction.manifestation != 'undefined' &&
+	        typeof ag.reaction.manifestation.text != 'undefined' )
+                {
+		return= all+' '+ag.reaction.manifestation.text;
+	        }
+	    else {
+		return all;
+	    }
+	else {
+		return undefined;
+	}
+}
 
   window.drawVisualization = function(p) {
     $('#holder').show();
