@@ -53,11 +53,11 @@
 	  var allergyzero = allergy[0];
 	  var allergytable = [];
 		
-		foreach(allergy){
-			if(allergy !== 'undefined'){
-				allergytable.push("<tr><td>"+allergy.code.text+"</td></tr>");
+		allergy.foreach(function (alg)){
+			if(alg !== 'undefined'){
+				allergytable.push("<tr><td>"+alg.code.text+"</td></tr>");
 			}	
-		}
+	}
 		console.log(allergytable);
 	
 
