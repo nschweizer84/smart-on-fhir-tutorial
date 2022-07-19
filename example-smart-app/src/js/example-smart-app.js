@@ -31,6 +31,8 @@
         $.when(pt, obv, allergy).fail(onError);
 
         $.when(pt, obv, allergy).done(function(patient, obv, alg) {
+		console.log(allergy);
+		
           var byCodes = smart.byCodes(obv, 'code');
           var gender = patient.gender;
 
@@ -48,7 +50,7 @@
           var hdl = byCodes('2085-9');
           var ldl = byCodes('2089-1');
           var temperature = byCodes('8310-5');
-	var allergyzero = allergy[0].code.text;
+	var allergyzero = allergy[0];
 	
 
           var p = defaultPatient();
