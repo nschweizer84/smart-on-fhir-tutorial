@@ -84,7 +84,7 @@
       diastolicbp: {value: ''},
       ldl: {value: ''},
       hdl: {value: ''},
-      temperature: {value: ''}
+      temperature: {value: ''},
     };
   }
 
