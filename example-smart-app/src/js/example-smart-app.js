@@ -50,7 +50,7 @@
           var hdl = byCodes('2085-9');
           var ldl = byCodes('2089-1');
           var temperature = byCodes('8310-5');
-	var allergyzero = allergy[0].code.text;
+	var allergyzero = allergy;
 	
 
           var p = defaultPatient();
@@ -60,7 +60,7 @@
           p.lname = lname;
           p.height = getQuantityValueAndUnit(height[0]);
           p.temperature = getQuantityValueAndUnit(temperature[0]);
-		p.allergyzero = allergyzero;
+		p.allergyzero = allergyzero[0].code.text;
 
           if (typeof systolicbp != 'undefined')  {
             p.systolicbp = systolicbp;
