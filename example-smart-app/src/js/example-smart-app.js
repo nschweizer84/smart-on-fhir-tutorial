@@ -148,7 +148,7 @@ function getAllergyAndReaction(ag) {
 	var all='';
 	if (typeof ag != 'undefined' &&
 	    typeof ag.code != 'undefined' &&
-	    typeof ag.code.text != 'undefined)
+	    typeof ag.code.text != 'undefined')
 	    {
 	    all = ag.code.text;
 	    
