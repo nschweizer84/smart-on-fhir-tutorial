@@ -140,7 +140,7 @@
     $('#ldl').html(p.ldl);
     $('#hdl').html(p.hdl);
     $('#temperature').html(p.temperature);
-	$('#allergyzero").html(p.allergyzero);
+	$('#allergyzero').html(p.allergyzero);
   };
 
 })(window);
