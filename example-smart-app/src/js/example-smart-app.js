@@ -149,7 +149,7 @@
     $('#hdl').html(p.hdl);
     $('#temperature').html(p.temperature);
 	$('#allergyzero').html(p.allergyzero);
-	  $'#allergytable'.html(p.allergies);
+	  $('#allergytable').html(p.allergies);
   };
 
 })(window);
