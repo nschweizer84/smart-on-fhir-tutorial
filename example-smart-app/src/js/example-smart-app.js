@@ -50,7 +50,6 @@
           var hdl = byCodes('2085-9');
           var ldl = byCodes('2089-1');
           var temperature = byCodes('8310-5');
-	  var allergyzero = allergy[0];
 	  var allergytable = [];
 		
 	
@@ -69,7 +68,6 @@
           p.lname = lname;
           p.height = getQuantityValueAndUnit(height[0]);
           p.temperature = getQuantityValueAndUnit(temperature[0]);
-		p.allergyzero = allergyzero.code.text;
 		p.allergytable = allergytable;
 		
 
@@ -108,7 +106,6 @@
       ldl: {value: ''},
       hdl: {value: ''},
       temperature: {value: ''},
-	    allergyzero: {value: ''},
 	    allergytable: [],
     };
   }
@@ -154,8 +151,7 @@
     $('#ldl').html(p.ldl);
     $('#hdl').html(p.hdl);
     $('#temperature').html(p.temperature);
-	$('#allergyzero').html(p.allergyzero);
-	  $('#allergytable').html(p.allergytable);
+    $('#allergytable').html(p.allergytable);
   };
 
 })(window);
