@@ -55,7 +55,10 @@
 		
 	
 		
-		allergy.forEach(element => console.log(element));
+		allergy.forEach(element => {
+				console.log(element);
+			allergytable.push("<tr><td>"+element.code.text+"</tr></td>");
+		})
 	
 
           var p = defaultPatient();
