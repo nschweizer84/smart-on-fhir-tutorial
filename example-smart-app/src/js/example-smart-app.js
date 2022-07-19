@@ -53,6 +53,8 @@
 	  var allergyzero = allergy[0];
 	  var allergytable = [];
 		
+	
+		
 		allergy.forEach(element => console.log(element));
 	
 
@@ -64,7 +66,7 @@
           p.height = getQuantityValueAndUnit(height[0]);
           p.temperature = getQuantityValueAndUnit(temperature[0]);
 		p.allergyzero = allergyzero.code.text;
-		p.allergies = allergytable;
+		p.allergytable = allergytable;
 		
 
           if (typeof systolicbp != 'undefined')  {
@@ -149,7 +151,7 @@
     $('#hdl').html(p.hdl);
     $('#temperature').html(p.temperature);
 	$('#allergyzero').html(p.allergyzero);
-	  $('#allergytable').html(p.allergies);
+	  $('#allergytable').html(p.allergytable);
   };
 
 })(window);
