@@ -51,6 +51,7 @@
           var ldl = byCodes('2089-1');
           var temperature = byCodes('8310-5');
 	  var allergytable = [];
+		var allergyreaction;
 		
 	
 		
@@ -59,6 +60,7 @@
 			if (typeof element != 'undefined'){
 			allergytable.push("<tr><th>Allergy:</th><td>"+element.code.text+"</tr></td>");
 			}})
+		
 		
 	
 
@@ -82,6 +84,9 @@
 
           p.hdl = getQuantityValueAndUnit(hdl[0]);
           p.ldl = getQuantityValueAndUnit(ldl[0]);
+		
+	p.allergyreaction=getAllergyAndReaction(allergy[0]);
+		console.log(p.allergyreaction);
 
           ret.resolve(p);
         });
