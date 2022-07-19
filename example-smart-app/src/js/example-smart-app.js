@@ -53,12 +53,7 @@
 	  var allergyzero = allergy[0];
 	  var allergytable = [];
 		
-		allergy.foreach(function (alg)){
-			if(alg !== 'undefined'){
-				allergytable.push("<tr><td>"+alg.code.text+"</td></tr>");
-			}	
-	}
-		console.log(allergytable);
+		allergy.foreach(element => console.log("Element"+element));{
 	
 
           var p = defaultPatient();
