@@ -30,7 +30,7 @@
 
         $.when(pt, obv, allergy).fail(onError);
 
-        $.when(pt, obv, allergy).done(function(patient, obv, alg) {
+        $.when(pt, obv, allergy).done(function(patient, obv, allergy) {
 		console.log(allergy);
 		
           var byCodes = smart.byCodes(obv, 'code');
@@ -50,7 +50,7 @@
           var hdl = byCodes('2085-9');
           var ldl = byCodes('2089-1');
           var temperature = byCodes('8310-5');
-	var allergyzero = allergy;
+	var allergyzero = allergy[0];
 	
 
           var p = defaultPatient();
@@ -60,7 +60,7 @@
           p.lname = lname;
           p.height = getQuantityValueAndUnit(height[0]);
           p.temperature = getQuantityValueAndUnit(temperature[0]);
-		p.allergyzero = allergyzero[0].code.text;
+		p.allergyzero = allergyzero.code.text;
 
           if (typeof systolicbp != 'undefined')  {
             p.systolicbp = systolicbp;
