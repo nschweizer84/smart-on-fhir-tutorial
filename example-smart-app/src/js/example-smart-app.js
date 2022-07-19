@@ -148,19 +148,20 @@ function getAllergyAndReaction(ag) {
 	var all='';
 	if (typeof ag != 'undefined' &&
 	    typeof ag.code != 'undefined' &&
-	    typeof ag.code.text != 'undefined')
-	    {
+	    typeof ag.code.text != 'undefined'){
+			
 	    all = ag.code.text;
 	    
 	    if (typeof ag.reaction != 'undefined' &&
 	    	typeof ag.reaction.manifestation != 'undefined' &&
-	        typeof ag.reaction.manifestation.text != 'undefined' )
-                {
-		return all+' Manifestation: '+ag.reaction.manifestation.text;
-	        }
-	    else {
-		return all;
+	        typeof ag.reaction.manifestation.text != 'undefined' ){
+				
+			return all+' Manifestation: '+ag.reaction.manifestation.text;
 	    }
+	    else {
+			return all;
+	    }
+	}
 	else {
 		return undefined;
 	}
