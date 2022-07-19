@@ -53,7 +53,7 @@
 	  var allergyzero = allergy[0];
 	  var allergytable = [];
 		
-		allergy.foreach(element => console.log(element));
+		allergy.forEach(element => console.log(element));
 	
 
           var p = defaultPatient();
