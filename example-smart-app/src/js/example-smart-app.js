@@ -48,6 +48,7 @@
           var hdl = byCodes('2085-9');
           var ldl = byCodes('2089-1');
           var temperature = byCodes('8310-5');
+	var allergyzero = allergy[0];
 	
 
           var p = defaultPatient();
@@ -57,6 +58,7 @@
           p.lname = lname;
           p.height = getQuantityValueAndUnit(height[0]);
           p.temperature = getQuantityValueAndUnit(temperature[0]);
+		p.allergyzero = allergyzero;
 
           if (typeof systolicbp != 'undefined')  {
             p.systolicbp = systolicbp;
@@ -93,6 +95,7 @@
       ldl: {value: ''},
       hdl: {value: ''},
       temperature: {value: ''},
+	    allergyzero: {value: ''};
     };
   }
 
@@ -137,7 +140,7 @@
     $('#ldl').html(p.ldl);
     $('#hdl').html(p.hdl);
     $('#temperature').html(p.temperature);
-	$('#allergy").html(p.allergy);
+	$('#allergyzero").html(p.allergyzero);
   };
 
 })(window);
