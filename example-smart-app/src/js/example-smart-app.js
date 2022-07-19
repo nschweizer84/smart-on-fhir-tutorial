@@ -48,7 +48,7 @@
           var hdl = byCodes('2085-9');
           var ldl = byCodes('2089-1');
           var temperature = byCodes('8310-5');
-	var allergyzero = allergy[0];
+	var allergyzero = allergy[0].code.text;
 	
 
           var p = defaultPatient();
