@@ -137,6 +137,7 @@
     $('#ldl').html(p.ldl);
     $('#hdl').html(p.hdl);
     $('#temperature').html(p.temperature);
+	$('#allergy").html(p.allergy);
   };
 
 })(window);
