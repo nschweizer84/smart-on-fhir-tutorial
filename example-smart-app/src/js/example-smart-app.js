@@ -103,7 +103,7 @@
       hdl: {value: ''},
       temperature: {value: ''},
 	    allergyzero: {value: ''},
-	    allergytable: {value: ''},
+	    allergytable: [{value: ''}],
     };
   }
 
