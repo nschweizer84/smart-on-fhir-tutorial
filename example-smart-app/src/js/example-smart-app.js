@@ -21,16 +21,18 @@
                     }
                   });
 				  
-		var alg = smart.patient.api.fetchAll({
-			type: 'AllergyIntolerance',
-			query: {
-				clinical-status: 'active'
+		var allergy = smart.patient.api.fetchAll({
+			"type": 'AllergyIntolerance',
+			"query": {
+				"clinical-status": 'active'
 			}
 		});
 
-        $.when(pt, obv, alg).fail(onError);
+        $.when(pt, obv, allergy).fail(onError);
 
-        $.when(pt, obv, alg).done(function(patient, obv, alg) {
+        $.when(pt, obv, allergy).done(function(patient, obv, allergy) {
+	
+		
           var byCodes = smart.byCodes(obv, 'code');
           var gender = patient.gender;
 
@@ -48,6 +50,18 @@
           var hdl = byCodes('2085-9');
           var ldl = byCodes('2089-1');
           var temperature = byCodes('8310-5');
+	  var allergytable = [];
+		var allergyreaction;
+		
+	
+		
+		allergy.forEach(element => {
+				console.log(element);
+			if (typeof element != 'undefined'){
+			allergytable.push("<tr><th>Allergy:</th><td>"+element.code.text+"</tr></td>");
+			}})
+		
+		
 	
 
           var p = defaultPatient();
@@ -57,6 +71,8 @@
           p.lname = lname;
           p.height = getQuantityValueAndUnit(height[0]);
           p.temperature = getQuantityValueAndUnit(temperature[0]);
+		p.allergytable = allergytable;
+		
 
           if (typeof systolicbp != 'undefined')  {
             p.systolicbp = systolicbp;
@@ -68,6 +84,9 @@
 
           p.hdl = getQuantityValueAndUnit(hdl[0]);
           p.ldl = getQuantityValueAndUnit(ldl[0]);
+		
+	p.allergyreaction=getAllergyAndReaction(allergy[0]);
+		console.log(p.allergyreaction);
 
           ret.resolve(p);
         });
@@ -93,6 +112,7 @@
       ldl: {value: ''},
       hdl: {value: ''},
       temperature: {value: ''},
+	    allergytable: [],
     };
   }
 
@@ -123,6 +143,28 @@
       return undefined;
     }
   }
+	
+function getAllergyAndReaction(ag) {
+	var all='';
+	if (typeof ag != 'undefined' &&
+	    typeof ag.code != 'undefined' &&
+	    typeof ag.code.text != 'undefined')
+	    {
+	    all = ag.code.text;
+	    
+	    if (typeof ag.reaction != 'undefined' &&
+	    	typeof ag.reaction.manifestation != 'undefined' &&
+	        typeof ag.reaction.manifestation.text != 'undefined' )
+                {
+		return all+' Manifestation: '+ag.reaction.manifestation.text;
+	        }
+	    else {
+		return all;
+	    }
+	else {
+		return undefined;
+	}
+}
 
   window.drawVisualization = function(p) {
     $('#holder').show();
@@ -137,6 +179,7 @@
     $('#ldl').html(p.ldl);
     $('#hdl').html(p.hdl);
     $('#temperature').html(p.temperature);
+    $('#allergytable').html(p.allergytable);
   };
 
 })(window);
