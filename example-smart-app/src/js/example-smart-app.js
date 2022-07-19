@@ -22,9 +22,9 @@
                   });
 				  
 		var alg = smart.patient.api.fetchAll({
-			type: 'AllergyIntolerance',
-			query: {
-				clinical-status: 'active'
+			"type": 'AllergyIntolerance',
+			"query": {
+				"clinical-status": 'active'
 			}
 		});
 
