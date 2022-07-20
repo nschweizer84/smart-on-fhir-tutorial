@@ -161,7 +161,7 @@ function getAllergyAndReaction(ag) {
 	        typeof ag.reaction[0].manifestation[0].text != 'undefined' ){
 				console.log(ag.reaction[0].manifestation[0].text);
 				
-			return alg+"<b>Reactions: </b>"+ag.reaction[0].manifestation[0].text;
+			return alg+"	 <b>Reactions: </b>"+ag.reaction[0].manifestation[0].text;
 	    }
 	    else {
 			return alg;
