@@ -164,7 +164,7 @@ function getAllergyAndReaction(ag) {
 			return alg+"<td>"+ag.reaction[0].manifestation[0].text+"</td></tr>";
 	    }
 	    else {
-			return alg+"</tr>;
+			return alg+"</tr>";
 	    }
 	}
 	else {
