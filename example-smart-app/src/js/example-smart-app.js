@@ -64,7 +64,7 @@
 		allergy.forEach(element => {
 				//console.log(element);
 			if (typeof element != 'undefined'){
-			allergytable.push("<tr><th>Allergy:</th><td>"+getAllergyAndReaction(element)"</tr></td>");
+			allergytable.push("<tr><th>Allergy:</th><td>"+getAllergyAndReaction(element)+"</tr></td>");
 			}})
 	
 
