@@ -159,9 +159,9 @@ function getAllergyAndReaction(ag) {
 	    if (typeof ag.reaction != 'undefined' &&
 	    	typeof ag.reaction.manifestation != 'undefined' &&
 	        typeof ag.reaction.manifestation.text != 'undefined' ){
-				console.log(ag.reaction.manifestation.text);
+				console.log(ag.reaction[0].manifestation[0].text);
 				
-			return alg+' Manifestation: '+ag.reaction.manifestation.text;
+			return alg+' Manifestation: '+ag.reaction[0].manifestation[0].text;
 	    }
 	    else {
 			return alg;
