@@ -61,6 +61,10 @@
 			allergytable.push("<tr><th>Allergy:</th><td>"+element.code.text+"</tr></td>");
 			}}) */
 		
+		if (typeof allergy != 'undefined'){
+			allergytable.push("<tr><th>Allergies</th><th>Reactions</th></tr>");
+		}
+		
 		allergy.forEach(element => {
 				//console.log(element);
 			if (typeof element != 'undefined'){
