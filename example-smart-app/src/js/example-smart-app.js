@@ -64,7 +64,7 @@
 		allergy.forEach(element => {
 				//console.log(element);
 			if (typeof element != 'undefined'){
-			allergytable.push("<tr><th>Allergy:</th><td>"+getAllergyAndReaction(element)+"</tr></td>");
+			allergytable.push("<tr><td>"+getAllergyAndReaction(element)+"</tr></td>");
 			}})
 	
 
@@ -154,17 +154,17 @@ function getAllergyAndReaction(ag) {
 	    typeof ag.code != 'undefined' &&
 	    typeof ag.code.text != 'undefined'){
 			
-	    alg = ag.code.text;
+	    alg = "<tr><td>"+ag.code.text+"</td>";
 	    
 	    if (typeof ag.reaction != 'undefined' &&
 	    	typeof ag.reaction[0].manifestation != 'undefined' &&
 	        typeof ag.reaction[0].manifestation[0].text != 'undefined' ){
 				console.log(ag.reaction[0].manifestation[0].text);
 				
-			return alg+"	 <b>Reactions: </b>"+ag.reaction[0].manifestation[0].text;
+			return alg+"<td>"+ag.reaction[0].manifestation[0].text+"</td></tr>";
 	    }
 	    else {
-			return alg;
+			return alg+"</tr>;
 	    }
 	}
 	else {
